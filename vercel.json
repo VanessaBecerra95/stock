@@ -12,15 +12,19 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://yourprojectname.vercel.app",
-        "APP_CONFIG_CACHE": "/tmp/config.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_SERVICES_CACHE": "/tmp/services.php",
-        "VIEW_COMPILED_PATH": "/tmp",
+        "APP_URL": "https://tu-proyecto.vercel.app",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie"
-    }
+    },
+    "builds": [
+        {
+            "src": "api/index.php",
+            "use": "vercel-php@0.6.0"
+        },
+        {
+            "src": "public/**",
+            "use": "@vercel/static"
+        }
+    ]
 }
